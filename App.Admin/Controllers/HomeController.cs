@@ -18,10 +18,17 @@ namespace App.Admin.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult Gallery()
         {
             return View();
         }
+
+
+        public IActionResult Widgets()
+        {
+            return View();
+        }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

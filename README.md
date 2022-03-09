@@ -1,4 +1,5 @@
-﻿# Programowanie internetowych aplikacji biznesowych
+﻿# Projekt zaliczeniowy
+## Programowanie internetowych aplikacji biznesowych
 
 Opis: Semestr 6, mgr Artur Kornatka, 
 
