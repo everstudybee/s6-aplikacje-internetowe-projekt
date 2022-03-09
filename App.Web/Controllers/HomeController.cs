@@ -18,7 +18,12 @@ namespace App.Web.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult Doctors()
+        {
+            return View();
+        }
+
+        public IActionResult Services()
         {
             return View();
         }

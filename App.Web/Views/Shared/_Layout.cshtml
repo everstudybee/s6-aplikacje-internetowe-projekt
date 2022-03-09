@@ -2,48 +2,314 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - App.Web</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/App.Web.styles.css" asp-append-version="true" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <!-- Favicon icon -->
+    <link rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="~/img/favicon.png" />
+    <title> @ViewData["Title"] - App.Web</title>
+    <!-- This is for the animation CSS -->
+    <link href="~/lib/aos/dist/aos.css" rel="stylesheet" />
+    <!-- Slider Main CSS -->
+    <link href="~/lib/owl.carousel/dist/assets/owl.theme.green.css"
+          rel="stylesheet" />
+    <link href="~/lib/datepicker/bootstrap-datepicker.min.css"
+          rel="stylesheet" />
+    <!-- Common style CSS -->
+    <link href="~/css/style.min.css" rel="stylesheet" />
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.../js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 </head>
-<body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">App.Web</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
+
+<body class="">
+    <!-- ============================================================== -->
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- ============================================================== -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="loader__figure"></div>
+            <p class="loader__label">Medika</p>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <div id="main-wrapper">
+        <!-- ============================================================== -->
+        <!-- Top header  -->
+        <!-- ============================================================== -->
+        <div class="topbar">
+            <div class="header15 po-relative">
+                <!-- Infobar  -->
+                <div class="h15-infobar">
+                    <div class="container">
+                        <nav class="navbar navbar-expand-lg h15-info-bar">
+                            <a href="index.html" class="navbar-brand">
+                                <img src="~/img/logo.jpg" alt="Medika" />
+                            </a>
+                            <button class="navbar-toggler shadow-none"
+                                    type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#h15-info"
+                                    aria-controls="h15-info"
+                                    aria-expanded="false"
+                                    aria-label="Toggle navigation">
+                                <span class="sl-icon-options-vertical"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="h15-info">
+                                <ul class="navbar-nav ms-auto">
+                                    <li class="nav-item">
+                                        <a class="nav-link">
+                                            <div class="display-6 m-r-10">
+                                                <i class="icon-Location-2"></i>
+                                            </div>
+                                            <div>
+                                                <small>
+                                                    121 King Street, Melbourne <br />Victoria 3000
+                                                    Australia
+                                                </small>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link">
+                                            <div class="display-6 m-r-10">
+                                                <i class="icon-Phone-2"></i>
+                                            </div>
+                                            <div>
+                                                <small>GET APPOINTMENT</small>
+                                                <h5 class="fw-bold">703 (123) 4567</h5>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+                <!-- Navbar  -->
+                <div class="h15-navbar pb-2 pb-md-0">
+                    <div class="container">
+                        <nav class="navbar navbar-expand-lg h15-nav">
+                            <h6 class="d-block d-lg-none mb-0 fw-medium">Navigation</h6>
+                            <button class="navbar-toggler shadow-none"
+                                    type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#header15"
+                                    aria-expanded="false"
+                                    aria-label="Toggle navigation">
+                                <span class="ti-menu"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="header15">
+                                <div class="hover-dropdown">
+                                    <ul class="navbar-nav">
+                                        <li class="nav-item dropdown active">
+                                            <a class="nav-link" href="@Url.Action("Index", "Home")"> Home </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="@Url.Action("Services", "Home")" target="_blank">Services</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="@Url.Action("Doctors", "Home")" target="_blank">Doctors</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <ul class="navbar-nav ms-auto">
+                                    <li class="nav-item search">
+                                        <a class="nav-link"
+                                           href="javascript:void(0)"
+                                           data-bs-toggle="modal"
+                                           data-bs-target="#exampleModal">
+                                            <i class="fa fa-calendar m-r-10"></i> Book an
+                                            Appointment
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
                 </div>
             </div>
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
-
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2022 - App.Web - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
-    </footer>
+        <!-- ============================================================== -->
+        <!-- Top header  -->
+        <!-- ============================================================== -->
+        <!-- Appointment form -->
+        <div class="modal fade" id="exampleModal">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Book an Appointment</h5>
+                        <button type="button"
+                                class="btn-close"
+                                data-bs-dismiss="modal"
+                                aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body overflow-hidden p-0" id="yt-player">
+                        <form class="bg-white appointment-form">
+                            <div class="form-row border-bottom d-flex">
+                                <div class="p-30 left b-r w-50">
+                                    <label class="text-inverse text-uppercase">First Name</label>
+                                    <input type="text"
+                                           class="border-0 p-0 fs-3 form-control"
+                                           placeholder="Your First Name" />
+                                </div>
+                                <div class="p-30 right w-50">
+                                    <label class="text-inverse text-uppercase">Last Name</label>
+                                    <input type="text"
+                                           class="border-0 p-0 fs-3 form-control"
+                                           placeholder="Your Last Name" />
+                                </div>
+                            </div>
+                            <div class="form-row border-bottom p-30">
+                                <label class="text-inverse text-uppercase">Email Address</label>
+                                <input type="text"
+                                       class="border-0 p-0 fs-3 form-control"
+                                       placeholder="Enter your Email Address" />
+                            </div>
+                            <div class="form-row border-bottom p-30">
+                                <label class="text-inverse text-uppercase">Phone Number</label>
+                                <input type="text"
+                                       class="border-0 p-0 fs-3 form-control"
+                                       placeholder="Enter your Phone Number" />
+                            </div>
+                            <div class="form-row border-bottom p-30 po-relative">
+                                <label class="text-inverse text-uppercase">Booking Date</label>
+                                <div class="input-group date">
+                                    <input type="text"
+                                           class="border-0 p-0 fs-3 form-control"
+                                           id="datepicker"
+                                           placeholder="Select the Appointment Date" />
+                                    <label class="input-group-addon" for="datepicker">
+                                        <i class="fa fa-calendar"></i>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-row border-bottom p-30">
+                                <label class="text-inverse text-uppercase">Message</label>
+                                <textarea class="border-0 fw-light p-0 fs-3 form-control"
+                                          placeholder="Write Down the Message"></textarea>
+                            </div>
+                            <div>
+                                <button class="
+                      m-0
+                      w-100
+                      border-0
+                      p-t-30 p-b-30
+                      fs-3
+                      fw-semibold
+                      bg-info
+                      btn btn-block btn-arrow
+                      text-center text-white text-uppercase
+                    ">
+                                    <span>
+                                        Book Yor Appointment Now <i class="ti-arrow-right"></i>
+                                    </span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        @RenderBody()
+
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Wrapper -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- All Jquery -->
+    <!-- ============================================================== -->
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+    <!-- Bootstrap popper Core JavaScript -->
+    <script src="~/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- This is for the animation -->
+    <script src="~/lib/aos/dist/aos.js"></script>
+    <!--Custom JavaScript -->
+    <script src="~/js/custom.min.js"></script>
+    <!-- ============================================================== -->
+    <!-- This page plugins -->
+    <!-- ============================================================== -->
+    <script src="~/lib/datepicker/bootstrap-datepicker.min.js"></script>
+    <script src="~/lib/owl.carousel/dist/owl.carousel.min.js"></script>
+    <script type="text/javascript">
+        $("#slider7").owlCarousel({
+            loop: true,
+            margin: 0,
+            nav: false,
+            dots: true,
+            autoplay: true,
+            responsiveClass: true,
+            responsive: {
+                0: {
+                    items: 1,
+                },
+                1650: {
+                    items: 1,
+                },
+            },
+        });
+        /*******************************/
+        // this is for the testimonial 2
+        /*******************************/
+        $(".testi2").owlCarousel({
+            loop: true,
+            margin: 20,
+            nav: false,
+            dots: true,
+            autoplay: true,
+            responsiveClass: true,
+            responsive: {
+                0: {
+                    items: 1,
+                    nav: false,
+                },
+                1170: {
+                    items: 1,
+                },
+            },
+        });
+        $(function () {
+            // 1) ASSIGN EACH 'DOT' A NUMBER
+            dotcount = 1;
+            $(".testi2 .owl-dot").each(function () {
+                $(this).addClass("dotnumber" + dotcount);
+                $(this).attr("data-info", dotcount);
+                dotcount = dotcount + 1;
+            });
+            // 2) ASSIGN EACH 'SLIDE' A NUMBER
+            slidecount = 1;
+            $(".testi2 .owl-item")
+                .not(".cloned")
+                .each(function () {
+                    $(this).addClass("slidenumber" + slidecount);
+                    slidecount = slidecount + 1;
+                });
+            $(".testi2 .owl-dot").each(function () {
+                grab = jQuery(this).data("info");
+                slidegrab = $(".slidenumber" + grab + " img").attr("src");
+                console.log(slidegrab);
+                $(this).css("background-image", "url(" + slidegrab + ")");
+            });
+            // THIS FINAL BIT CAN BE REMOVED AND OVERRIDEN WITH YOUR OWN CSS OR FUNCTION, I JUST HAVE IT
+            // TO MAKE IT ALL NEAT
+        });
+        $(function () {
+            $("#datepicker").datepicker();
+        });
+    </script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
+
